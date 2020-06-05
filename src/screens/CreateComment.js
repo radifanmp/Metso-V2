@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { View, TextInput, StyleSheet } from 'react-native';
-import { Icon} from 'native-base';
+import { View, Text, TextInput, StyleSheet } from 'react-native';
+import { Icon, Thumbnail } from 'native-base';
 
 class CreateComment extends Component {
   constructor(props) {
@@ -19,7 +19,6 @@ class CreateComment extends Component {
         style={{ color: '#2F3542' }} />,
       headerTitle: 'Comment Post',
       headerTitleStyle: styles.titleHeader,
-
       headerRight: () => <Icon
         type="MaterialIcons"
         onPress={() => this.props.navigation.goBack()}
@@ -35,6 +34,7 @@ class CreateComment extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.sectionTextPost}>
+          <Thumbnail source={{ uri: 'https://i.pravatar.cc/300' }} style={styles.avatarUserPost} />
           <TextInput
             style={styles.textPost}
             selectionColor={"#45AAF2"}
@@ -77,6 +77,7 @@ const styles = StyleSheet.create({
   },
   textPost: {
     flex: 1,
+    marginLeft: 48,
     fontFamily: 'Poppins-Regular',
     fontSize: 16,
     color: '#2F3542',

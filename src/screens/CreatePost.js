@@ -1,19 +1,17 @@
 import React, { Component } from 'react';
 import { View, Text, TextInput, StyleSheet } from 'react-native';
-import { Icon } from 'native-base';
-
+import { Icon, Thumbnail } from 'native-base';
 
 class CreatePost extends Component {
   constructor(props) {
     super(props);
     this.state = {
     };
-  } 
+  }
 
   render() {
 
     this.props.navigation.setOptions({
-      
       headerLeft: () => <Icon
         type="MaterialIcons"
         onPress={() => this.props.navigation.goBack()}
@@ -21,7 +19,6 @@ class CreatePost extends Component {
         style={{ color: '#2F3542' }} />,
       headerTitle: 'Create Post',
       headerTitleStyle: styles.titleHeader,
-
       headerRight: () => <Icon
         type="MaterialIcons"
         onPress={() => this.props.navigation.goBack()}
@@ -37,13 +34,13 @@ class CreatePost extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.sectionTextPost}>
+          <Thumbnail source={{ uri: 'https://i.pravatar.cc/300' }} style={styles.avatarUserPost} />
           <TextInput
             style={styles.textPost}
             selectionColor={"#45AAF2"}
             numberOfLines={10}
             multiline={true}
-            placeholder={'What you want to share ?'} 
-          />
+            placeholder={'What you want to share ?'} />
         </View>
 
         <View style={styles.sectionAddPhoto}>
@@ -85,6 +82,7 @@ const styles = StyleSheet.create({
   },
   textPost: {
     flex: 1,
+    marginLeft: 48,
     fontFamily: 'Poppins-Regular',
     fontSize: 16,
     color: '#2F3542',

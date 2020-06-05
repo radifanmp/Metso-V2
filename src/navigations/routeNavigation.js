@@ -7,7 +7,6 @@ import Register from './../screens/Register';
 import Feed from './../screens/Feed';
 import DetailPost from './../screens/DetailPost';
 import CreatePost from './../screens/CreatePost';
-import UpdatePost from './../screens/UpdatePost';
 import CreateComment from './../screens/CreateComment';
 
 const Stack = createStackNavigator();
@@ -21,7 +20,6 @@ function RouteNavigation() {
 				<Stack.Screen name="Feed" component={Feed} />
 				<Stack.Screen name="DetailPost" component={DetailPost} />
 				<Stack.Screen name="CreatePost" component={CreatePost} />
-				<Stack.Screen name="UpdatePost" component={UpdatePost} />
 				<Stack.Screen name="CreateComment" component={CreateComment} />
 			</Stack.Navigator>
 		</NavigationContainer>

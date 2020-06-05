@@ -16,7 +16,7 @@ renderViewLess = (onPress) => {
   );
 }
 
-const CardFeed = (props) =>{
+const CardFeed = (props) => {
 
   const [active, setActive] = React.useState(false);
 
@@ -67,7 +67,6 @@ const CardFeed = (props) =>{
     </TouchableOpacity>
   )
 }
-
 
 export default CardFeed
 

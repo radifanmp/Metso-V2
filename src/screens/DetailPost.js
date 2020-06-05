@@ -12,7 +12,7 @@ class DetailPost extends Component {
     };
   }
 
-  handleComment(item) {
+  handleComment() {
     this.props.navigation.navigate('CreateComment')
   }
 
@@ -34,20 +34,19 @@ class DetailPost extends Component {
           <View>
             {item.image === "" ?
               <CardFeed
-                userImage={{ uri: item.createdBy.userAvatar}}
+                userImage={{ uri: item.createdBy.userAvatar }}
                 userName={item.createdBy.fullName}
                 datePost={item.createdAt}
                 caption={item.text}
-                actionComment={() => this.handleComment()}
-                />
+                actionComment={() => this.handleComment()} />
               :
               <CardFeed
-                userImage={{ uri: item.createdBy.userAvatar}}
+                userImage={{ uri: item.createdBy.userAvatar }}
                 userName={item.createdBy.fullName}
                 datePost={item.createdAt}
                 caption={item.text}
-                actionComment={() => this.handleComment()}
-                />
+                imagePost={item.image}
+                actionComment={() => this.handleComment()} />
             }
           </View>
 
@@ -60,7 +59,7 @@ class DetailPost extends Component {
             />
           )}
         </ScrollView>
-        <TouchableOpacity activeOpacity={1} onPress={this.props.navigation.navigate('CreateComment')} style={styles.sectionInputComment}>
+        <TouchableOpacity activeOpacity={1} onPress={()=>this.props.navigation.navigate('CreateComment')} style={styles.sectionInputComment}>
           <Text style={styles.textInputComment}>{"Type your comment"}</Text>
         </TouchableOpacity>
       </View>

@@ -6,17 +6,6 @@ import TextInput from './../components/TextInput';
 
 export default class Register extends Component {
 
-  constructor() {
-    super()
-    this.state = {
-    	visibility: true
-    }
-  }
-  
-  handleVisibility = () => {
-		this.setState({ visibility: !this.state.visibility })
-	}
-
   render() {
 
     this.props.navigation.setOptions({
@@ -42,14 +31,13 @@ export default class Register extends Component {
             keyboardType={"email-address"} />
           <TextInput
             passsword={true}
-            changeVisibility={this.handleVisibility}
-            secureTextEntry={this.state.visibility}
+            secureTextEntry={true}
             label="Password"
             placeholder="Input your password ..." />
         </Form>
         <View style={styles.sectionFooter}>
-          <Button block style={styles.btnBlock} onPress={()=>this.props.navigation.navigate('Feed')}>
-            <Text style={styles.labelBtn}>{"SIGN UP"}</Text>
+          <Button block style={styles.btnBlock} onPress={() => this.props.navigation.navigate('Feed')}>
+            <Text style={styles.labelBtn}>{"SIGN IN"}</Text>
           </Button>
           <View style={styles.infoFooter}>
             <Text style={styles.textInfo}>{"I already have an account."} <Text style={styles.textInfoLink} onPress={() => this.props.navigation.goBack()}>{"Sign in"}</Text></Text>
