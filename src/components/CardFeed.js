@@ -32,11 +32,11 @@ const CardFeed = (props) => {
             onPress={() => setActive(!active)}>
             <Icon name="more" />
 
-            <Button style={{ backgroundColor: '#f39c12',marginTop:20, marginLeft: 70,width: "50%", height: "50%" }} onPress={() => props.actionUpdatePost(props.idPost)}>
+            <Button style={{ backgroundColor: '#f39c12',marginTop:20, marginLeft: 70,width: "50%", height: "50%" }}>
               <Icon type="MaterialIcons" name="update" />
             </Button>
 
-            <Button style={{ backgroundColor: '#e74c3c', marginTop:20, marginLeft: 85, width: "50%", height: "50%" }} onPress={() => props.actionDeletePost(props.idPost)}>
+            <Button style={{ backgroundColor: '#e74c3c', marginTop:20, marginLeft: 85, width: "50%", height: "50%" }}>
               <Icon name="trash" />
             </Button>
         </Fab>
