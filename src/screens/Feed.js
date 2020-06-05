@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Image, StatusBar, ScrollView } from 'react-native';
-import { Thumbnail, Icon, Fab } from 'native-base';
+import { Icon, Fab } from 'native-base';
 
 import CardFeed from './../components/CardFeed';
 import data_feed from '../api/data_feed';
@@ -20,7 +20,6 @@ class Feed extends Component {
 
 		this.props.navigation.setOptions({
 			headerTitleAlign: "center",
-			headerLeft: () => <Thumbnail source={{ uri: 'https://i.pravatar.cc/300' }} style={{ width: 32, height: 32 }} />,
 			headerTitle: () => <Image source={require('./../assets/img/logo-title.png')} style={{ width: 84, height: 20 }} />,
 			headerRight: () => <Icon type="MaterialIcons" name="notifications" style={{ color: '#ffffff' }} />,
 			headerStyle: { backgroundColor: '#45AAF2', elevation: 0 },
